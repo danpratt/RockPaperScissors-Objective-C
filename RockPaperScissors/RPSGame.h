@@ -16,5 +16,8 @@
 
 -(instancetype) initWithFirstTurnPlayerOne:(RPSTurn *)playersMove andPlayerTwo:(RPSTurn *)computersMove;
 
+-(RPSTurn*) winner;
+-(RPSTurn*) loser;
+-(NSString*) resultsOfGame: (RPSGame*) game;
 
 @end

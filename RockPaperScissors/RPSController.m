@@ -14,7 +14,11 @@
 -(void) throwDown:(Move)playerMove {
     // here is the RPSTurn class generates the opponent's move
     RPSTurn *playersTurn = [[RPSTurn alloc] initWithMove: playerMove];
+    RPSTurn *computersTurn = [[RPSTurn alloc] init];
     
+    // The RPSGame class stores the results of a game
+    self.game = [[RPSGame alloc] initWithFirstTurnPlayerOne:playersTurn
+                                               andPlayerTwo:computersTurn];
 }
 
 @end
