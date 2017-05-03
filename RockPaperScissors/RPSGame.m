@@ -38,7 +38,7 @@
 }
 
 -(NSString*) resultsOfGame:(RPSGame *)game {
-    return [game.firstTurn defeats:game.secondTurn] ? @"You Win!" : @"You Lose!";
+    return [game.firstTurn defeats:game.secondTurn] ? @"You Win!" : (game.firstTurn.move == game.secondTurn.move) ? @"Tie Game!" : @"You Lose!";
 }
 
 @end

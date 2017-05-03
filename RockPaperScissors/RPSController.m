@@ -21,4 +21,27 @@
                                                andPlayerTwo:computersTurn];
 }
 
+-(NSString*)messageForGame:(RPSGame*)game {
+    // First, handle the tie
+    // Check too see if the defeats is false
+    NSString *gameResultString = [[game resultsOfGame:game] description];
+    
+    // Then build up the results message "Rock defeats Scissors. You Win!" etc.
+    NSString *winnerString = [[game winner] description];
+    // Build the loserString here.
+    NSString *loserString = [[game loser] description];
+    // Build the resultsString here.
+    
+    if ([gameResultString isEqualToString:@"Tie Game!"]) {
+        return [[NSString alloc] initWithFormat:@"%@ You both had %@.", gameResultString, winnerString];
+    } else {
+        return  [[NSString alloc] initWithFormat:@"%@ %@ defeats %@.", gameResultString, winnerString, loserString];
+    }
+    
+    
+    
+    
+    
+}
+
 @end
